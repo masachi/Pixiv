@@ -4,7 +4,6 @@ import org.kohsuke.args4j.CmdLineException;
 import org.kohsuke.args4j.CmdLineParser;
 import org.kohsuke.args4j.Option;
 import spider.PixivBookmarkSpider;
-import spider.YuyuyuSpider;
 
 public class PixivSpider {
     private static String outPath = null;
@@ -17,11 +16,9 @@ public class PixivSpider {
                 System.out.println("参数错误");
             }
             else{
-                //Spider bookmark = new PixivBookmarkSpider(outPath);
-                //login.loginToPixiv();
-                //bookmark.spider();
-                Spider yuyuyu = new YuyuyuSpider(outPath);
-                yuyuyu.spider();
+                Spider bookmark = new PixivBookmarkSpider(outPath);
+                login.loginToPixiv();
+                bookmark.spider();
             }
         }
         catch (Exception e){
